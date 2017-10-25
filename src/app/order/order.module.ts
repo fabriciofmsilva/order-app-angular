@@ -11,6 +11,10 @@ import { OrderTableComponent } from './order-table/order-table.component';
     CommonModule,
     OrderRoutingModule
   ],
-  declarations: [OrderPageComponent, OrderAddComponent, OrderTableComponent]
+  declarations: [
+    OrderPageComponent,
+    OrderAddComponent,
+    OrderTableComponent
+  ]
 })
 export class OrderModule { }
