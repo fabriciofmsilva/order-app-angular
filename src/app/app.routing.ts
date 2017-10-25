@@ -8,7 +8,7 @@ export const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'order',
+    path: 'orders',
     loadChildren: 'app/order/order.module#OrderModule'
   }
 ];
