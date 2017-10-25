@@ -2,7 +2,7 @@ sudo: required
 dist: trusty
 language: node_js
 node_js:
-  - "8"
+  - '8'
 
 branches:
   only:
@@ -31,8 +31,11 @@ script:
   - karma start karma.conf.js --single-run
   - ng build --prod
 
-# after_success:
-#   - firebase deploy --token $FIREBASE_TOKEN
+deploy:
+  provider: heroku
+  api-key:
+    secure: $HEROKU_API_KEY
+  app: order-app-angular
 
 notifications:
   email:
