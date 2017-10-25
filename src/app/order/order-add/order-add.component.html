@@ -1,18 +1,24 @@
-<form>
+<form [formGroup]="orderForm"
+  (ngSubmit)="onOrderFormSubmit(orderForm.value)"
+>
   <div class="form-row align-items-center">
     <div class="col-auto">
       <div class="form-check mb-2 mb-sm-0">
         <label class="form-check-label">
           <input class="form-check-input"
             type="radio"
-            name="inlineRadioOptions"
+            name="type"
+            value="deposit"
+            formControlName="type"
           >
           Saque
         </label>
         <label class="form-check-label">
           <input class="form-check-input"
             type="radio"
-            name="inlineRadioOptions"
+            name="type"
+            value="withdraw"
+            formControlName="type"
           >
           Depósito
         </label>
@@ -28,11 +34,13 @@
         id="inlineFormInput"
         type="text"
         placeholder="Valor"
+        formControlName="value"
       >
     </div>
     <div class="col-auto">
       <button class="btn btn-primary"
         type="submit"
+        [disabled]="orderForm.invalid"
       >
         Adicionar
       </button>

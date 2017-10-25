@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { OrderAddComponent } from './order-add.component';
 
@@ -8,6 +9,10 @@ describe('OrderAddComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        FormsModule,
+        ReactiveFormsModule
+      ],
       declarations: [ OrderAddComponent ]
     })
     .compileComponents();

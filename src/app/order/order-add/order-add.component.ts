@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-order-add',
@@ -7,9 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderAddComponent implements OnInit {
 
-  constructor() { }
+  orderForm: FormGroup;
+
+  constructor(
+    private formBuilder: FormBuilder
+  ) { }
 
   ngOnInit() {
+    this.orderForm = this.initOrderForm();
+  }
+
+  onOrderFormSubmit(order) {
+    console.log(order);
+  }
+
+  private initOrderForm() {
+    return this.formBuilder.group({
+      type: [
+        'deposit'
+      ],
+      value: [
+        '',
+        [ Validators.required ]
+      ]
+    });
   }
 
 }
