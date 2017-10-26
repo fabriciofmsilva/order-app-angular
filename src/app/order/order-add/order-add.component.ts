@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import { UuidService } from '@app/core';
+
 @Component({
   selector: 'app-order-add',
   templateUrl: './order-add.component.html',
@@ -11,7 +13,8 @@ export class OrderAddComponent implements OnInit {
   orderForm: FormGroup;
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private uuid: UuidService
   ) { }
 
   ngOnInit() {
@@ -24,6 +27,9 @@ export class OrderAddComponent implements OnInit {
 
   private initOrderForm() {
     return this.formBuilder.group({
+      id: [
+        `${this.uuid.get()}`
+      ],
       type: [
         'deposit'
       ],
