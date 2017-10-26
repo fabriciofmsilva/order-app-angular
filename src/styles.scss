@@ -1,2 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'assets/styles/_page.scss';
+
+@mixin position-full() {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@import 'assets/styles/_settings';
+@import 'assets/styles/_base';
+@import 'assets/styles/_button';
+@import 'assets/styles/_page';

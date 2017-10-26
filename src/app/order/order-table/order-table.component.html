@@ -1,4 +1,4 @@
-<table class="table table-sm table-striped table-hover">
+<!-- <table class="table table-sm table-striped table-hover">
   <thead>
     <tr>
       <th scope="col">Tipo</th>
@@ -14,7 +14,7 @@
   <tbody>
     <tr *ngFor="let order of orders; trackBy: trackOrder">
       <td>{{ order.type }}</td>
-      <td>{{ order.value }}</td>
+      <td></td>
       <td>
         <button class="btn btn-link"
           (click)="onOrderRemove(order.id)"
@@ -24,4 +24,50 @@
       </td>
     </tr>
   </tbody>
-</table>
+</table> -->
+
+<div class="table-fake">
+  <div class="head">
+    <div class="row">
+      <div class="col">
+        <div class="text">Tipo</div>
+      </div>
+      <div class="col">
+        <div class="text">Valor</div>
+      </div>
+      <div class="col col-2">
+        <div class="text">Ações</div>
+      </div>
+    </div>
+  </div>
+  <div class="body">
+    <div class="row"
+      *ngFor="let order of orders; trackBy: trackOrder;"
+    >
+      <div class="col">
+        <div class="text">{{ order.type }}</div>
+      </div>
+      <div class="col">
+        <div class="text">{{ order.value }}</div>
+      </div>
+      <div class="col col-2">
+          <button class="btn btn-link"
+            (click)="onOrderRemove(order.id)"
+          >
+            remover
+          </button>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div class="row">
+      <div class="col">
+        <div class="text">Total em conta:</div>
+      </div>
+      <div class="col">
+        <div class="text">{{ total }}</div>
+      </div>
+      <div class="col col-2"><div class="text"></div></div>
+    </div>
+  </div>
+</div>

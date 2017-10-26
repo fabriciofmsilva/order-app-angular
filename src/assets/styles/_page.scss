@@ -1,9 +1,24 @@
 .page {
   padding-top: 5.6rem;
   padding-bottom: 5.6rem;
+  overflow: auto;
+
+  &.page-fixed {
+    @include position-full();
+    overflow: hidden;
+
+    .container {
+      height: 100%;
+    }
+  }
 
   .title {
     margin-bottom: 1rem;
     font-size: 1.6rem;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
   }
 }

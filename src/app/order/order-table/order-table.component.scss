@@ -1,3 +1,51 @@
+@import "~assets/styles/settings";
+
+:host {
+  position: relative;
+  flex-grow: 1;
+  flex-shrink: 1;
+  overflow: hidden;
+}
+
+.table-fake {
+  @include position-full();
+  display: flex;
+  flex-direction: column;
+
+  .text {
+    padding: .3rem;
+  }
+
+  .head {
+    .col {
+      font-weight: 600;
+      border-bottom: 2px solid #e9ecef;
+    }
+  }
+
+  .body {
+    flex-grow: auto;
+    flex-shrink: 1;
+    overflow: auto;
+
+    .row {
+      &:nth-of-type(odd) {
+        background-color: rgba(0, 0, 0, .025);
+      }
+
+      &:hover {
+        background-color: rgba(0, 0, 0, .05);
+      }
+    }
+
+    .col {
+      line-height: 2.2;
+      border-top: 1px solid #e9ecef;
+    }
+  }
+}
+
+
 .table {
   td {
     vertical-align: middle;
