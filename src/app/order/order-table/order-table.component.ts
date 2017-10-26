@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 
 import { Order } from '@app/core';
 
@@ -7,10 +7,11 @@ import { Order } from '@app/core';
   templateUrl: './order-table.component.html',
   styleUrls: ['./order-table.component.scss']
 })
-export class OrderTableComponent implements OnInit {
+export class OrderTableComponent implements OnChanges, OnInit {
 
   @Input()
   orders: Array<Order>;
+  total: number;
 
   @Output()
   removeOrder = new EventEmitter();
@@ -20,8 +21,18 @@ export class OrderTableComponent implements OnInit {
   ngOnInit() {
   }
 
+  ngOnChanges() {
+    this.total = this.getTotal();
+  }
+
   onOrderRemove(orderId: string) {
     this.removeOrder.emit(orderId);
+  }
+
+  private getTotal() {
+    return this.orders.reduce((total, order) => {
+      return order.type === 'deposit' ? total + parseFloat(order.value) : total - parseFloat(order.value);
+    }, 0);
   }
 
 }

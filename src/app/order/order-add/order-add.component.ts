@@ -29,6 +29,7 @@ export class OrderAddComponent implements OnInit {
 
   onOrderFormSubmit(order: Order) {
     this.addOrder.emit(order);
+    this.orderForm = this.initOrderForm();
   }
 
   private initOrderForm() {
@@ -37,7 +38,7 @@ export class OrderAddComponent implements OnInit {
         `${this.uuid.get()}`
       ],
       type: [
-        'deposit'
+        'withdraw'
       ],
       value: [
         '',
