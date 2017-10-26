@@ -30,6 +30,10 @@ export class OrderTableComponent implements OnChanges, OnInit {
     this.removeOrder.emit(orderId);
   }
 
+  trackOrder(index, order) {
+    return order ? order.id : undefined;
+  }
+
   private getTotal(orders: Array<Order>) {
     return orders.reduce((total, order) => {
       return order.type === 'deposit' ? total + parseFloat(order.value) : total - parseFloat(order.value);

@@ -12,7 +12,7 @@
     <td></td>
   </tfoot>
   <tbody>
-    <tr *ngFor="let order of orders;">
+    <tr *ngFor="let order of orders; trackBy: trackOrder">
       <td>{{ order.type }}</td>
       <td>{{ order.value }}</td>
       <td>
