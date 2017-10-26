@@ -59,7 +59,7 @@
       </div>
       <div class="col col-12 col-sm-3">
         <div class="text">
-          <b class="sm-show">Valor: </b>{{ order.value }}
+          <b class="sm-show">Valor: </b>{{ order.value | currency:'BRL':true }}
         </div>
       </div>
       <div class="col col-12 col-sm-3">
@@ -78,7 +78,7 @@
         <div class="text">Total em conta:</div>
       </div>
       <div class="col-6">
-        <div class="text">{{ total }}</div>
+        <div class="text">{{ total | currency:'BRL':true }}</div>
       </div>
     </div>
   </div>
