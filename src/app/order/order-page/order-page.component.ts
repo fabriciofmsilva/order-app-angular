@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import * as moment from 'moment';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 import { Order } from '@app/core';
+
 
 @Component({
   selector: 'app-order-page',
@@ -11,9 +13,15 @@ import { Order } from '@app/core';
 })
 export class OrderPageComponent implements OnInit {
 
+  @ViewChild('content')
+  content: any;
+
+  closeResult: string;
   orders: Array<Order> = [];
 
-  constructor() { }
+  constructor(
+    private modalService: NgbModal
+  ) { }
 
   ngOnInit() {
     this.orders.push(
@@ -43,9 +51,33 @@ export class OrderPageComponent implements OnInit {
   }
 
   removeOrder(orderId: string) {
-    this.orders = this.orders.filter((order) => {
-      return order.id !== orderId;
-    });
+    this.open(this.content)
+      .then(
+        (result) => {
+          this.closeResult = `Closed with: ${result}`;
+          if (this.closeResult.indexOf('Confirm') !== -1) {
+            this.orders = this.orders.filter((order) => {
+              return order.id !== orderId;
+            });
+          }
+          }, (reason) => {
+            this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        }
+      );
+  }
+
+  open(content) {
+    return this.modalService.open(content).result;
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return  `with: ${reason}`;
+    }
   }
 
 }

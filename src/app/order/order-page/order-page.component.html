@@ -8,3 +8,19 @@
     ></app-order-table>
   </div>
 </main>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Confirmação</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Tem certeza que gostaria de remover a transação?</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-link" (click)="c('Close click')">Cancelar</button>
+    <button type="button" class="btn btn-danger" (click)="c('Confirm click')">Deletar</button>
+  </div>
+</ng-template>
