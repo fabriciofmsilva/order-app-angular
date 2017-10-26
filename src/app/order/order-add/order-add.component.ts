@@ -41,7 +41,7 @@ export class OrderAddComponent implements OnInit {
         'withdraw'
       ],
       value: [
-        '',
+        null,
         [ Validators.required ]
       ]
     });
