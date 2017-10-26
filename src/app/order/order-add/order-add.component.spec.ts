@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { UuidService } from '@app/core';
 import { OrderAddComponent } from './order-add.component';
 
 describe('OrderAddComponent', () => {
@@ -13,7 +14,8 @@ describe('OrderAddComponent', () => {
         FormsModule,
         ReactiveFormsModule
       ],
-      declarations: [ OrderAddComponent ]
+      declarations: [ OrderAddComponent ],
+      providers: [ UuidService ]
     })
     .compileComponents();
   }));

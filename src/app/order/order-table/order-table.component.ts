@@ -23,9 +23,7 @@ export class OrderTableComponent implements OnChanges, OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log(changes);
     this.total = this.getTotal(changes.orders.currentValue);
-    console.log(this.total);
   }
 
   onOrderRemove(orderId: string) {
