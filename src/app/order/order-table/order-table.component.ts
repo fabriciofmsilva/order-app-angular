@@ -34,6 +34,10 @@ export class OrderTableComponent implements OnChanges, OnInit {
     return order ? order.id : undefined;
   }
 
+  getOrderType(orderType: string) {
+    return orderType === 'withdraw' ? 'Saque' : 'Depósito';
+  }
+
   private getTotal(orders: Array<Order>) {
     return orders.reduce((total, order) => {
       return order.type === 'deposit' ? total + parseFloat(order.value) : total - parseFloat(order.value);

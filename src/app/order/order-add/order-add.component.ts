@@ -1,6 +1,8 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import * as moment from 'moment';
+
 import {
   Order,
   UuidService
@@ -28,7 +30,8 @@ export class OrderAddComponent implements OnInit {
   }
 
   onOrderFormSubmit(order: Order) {
-    this.addOrder.emit(order);
+    const orderToSend = { ...order, createdAt: moment().valueOf() };
+    this.addOrder.emit(orderToSend);
     this.orderForm = this.initOrderForm();
   }
 
@@ -43,6 +46,9 @@ export class OrderAddComponent implements OnInit {
       value: [
         null,
         [ Validators.required ]
+      ],
+      createdAt: [
+        null
       ]
     });
   }

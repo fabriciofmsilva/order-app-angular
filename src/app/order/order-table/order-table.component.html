@@ -27,15 +27,18 @@
 </table> -->
 
 <div class="table-fake">
-  <div class="head">
+  <div class="head sm-hidden">
     <div class="row">
-      <div class="col">
+      <div class="col col-3">
+        <div class="text">Data</div>
+      </div>
+      <div class="col col-3">
         <div class="text">Tipo</div>
       </div>
-      <div class="col">
+      <div class="col col-3">
         <div class="text">Valor</div>
       </div>
-      <div class="col col-2">
+      <div class="col col-3">
         <div class="text">Ações</div>
       </div>
     </div>
@@ -44,30 +47,39 @@
     <div class="row"
       *ngFor="let order of orders; trackBy: trackOrder;"
     >
-      <div class="col">
-        <div class="text">{{ order.type }}</div>
+      <div class="col col-12 col-sm-3">
+        <div class="text">
+          <b class="sm-show">Data: </b>{{ order.createdAt | date:'yMd' }}
+        </div>
       </div>
-      <div class="col">
-        <div class="text">{{ order.value }}</div>
+      <div class="col col-12 col-sm-3">
+        <div class="text">
+          <b class="sm-show">Tipo: </b>{{ getOrderType(order.type) }}
+        </div>
       </div>
-      <div class="col col-2">
-          <button class="btn btn-link"
-            (click)="onOrderRemove(order.id)"
-          >
-            remover
-          </button>
+      <div class="col col-12 col-sm-3">
+        <div class="text">
+          <b class="sm-show">Valor: </b>{{ order.value }}
+        </div>
+      </div>
+      <div class="col col-12 col-sm-3">
+        <b class="sm-show padding">Ações: </b>
+        <button class="btn btn-link"
+          (click)="onOrderRemove(order.id)"
+        >
+          remover
+        </button>
       </div>
     </div>
   </div>
   <div class="foot">
     <div class="row">
-      <div class="col">
+      <div class="col-6">
         <div class="text">Total em conta:</div>
       </div>
-      <div class="col">
+      <div class="col-6">
         <div class="text">{{ total }}</div>
       </div>
-      <div class="col col-2"><div class="text"></div></div>
     </div>
   </div>
 </div>

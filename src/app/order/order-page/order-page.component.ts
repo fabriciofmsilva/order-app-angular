@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import * as moment from 'moment';
+
 import { Order } from '@app/core';
 
 @Component({
@@ -16,25 +18,28 @@ export class OrderPageComponent implements OnInit {
   ngOnInit() {
     this.orders.push(
       {
-        id: '1',
-        value: '12',
-        type: 'withdraw'
+        id: '3',
+        value: '20',
+        type: 'deposit',
+        createdAt: moment().valueOf()
       },
       {
         id: '2',
         value: '15',
-        type: 'deposit'
+        type: 'deposit',
+        createdAt: moment().subtract(1, 'days').valueOf()
       },
       {
-        id: '3',
-        value: '20',
-        type: 'deposit'
+        id: '1',
+        value: '12',
+        type: 'withdraw',
+        createdAt: moment().subtract(2, 'days').valueOf()
       }
     );
   }
 
   addOrder(order: Order) {
-    this.orders = [ ...this.orders, order ];
+    this.orders = [ order, ...this.orders ];
   }
 
   removeOrder(orderId: string) {

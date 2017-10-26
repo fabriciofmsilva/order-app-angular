@@ -1,7 +1,12 @@
 .page {
-  padding-top: 5.6rem;
-  padding-bottom: 5.6rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
   overflow: auto;
+
+  @media (min-width: 576px) and (orientation: landscape) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
 
   &.page-fixed {
     @include position-full();
@@ -15,6 +20,10 @@
   .title {
     margin-bottom: 1rem;
     font-size: 1.6rem;
+
+    @media (min-width: 576px) and (orientation: landscape) {
+      margin-bottom: .3rem;
+    }
   }
 
   .container {
