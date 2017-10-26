@@ -1,12 +1,21 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UuidService } from './utils/uuid.service';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [],
+  declarations: [
+    FooterComponent,
+    HeaderComponent
+  ],
+  exports: [
+    FooterComponent,
+    HeaderComponent
+  ],
   providers: [UuidService]
 })
 export class CoreModule {
