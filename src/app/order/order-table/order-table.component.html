@@ -2,13 +2,37 @@
   <div class="head sm-hidden">
     <div class="row">
       <div class="col col-3">
-        <div class="text">Data</div>
+        <div class="text caret"
+          [ngClass]="{
+            'active': sort.by === 'createdAt',
+            'up': sort.by === 'createdAt' && sort.up
+          }"
+          (click)="setSort('createdAt')"
+        >
+          Data
+        </div>
       </div>
       <div class="col col-3">
-        <div class="text">Tipo</div>
+        <div class="text caret"
+          [ngClass]="{
+            'active': sort.by === 'type',
+            'up': sort.by === 'type' && sort.up
+          }"
+          (click)="setSort('type')"
+        >
+          Tipo
+        </div>
       </div>
       <div class="col col-3">
-        <div class="text">Valor</div>
+        <div class="text caret"
+          [ngClass]="{
+            'active': sort.by === 'value',
+            'up': sort.by === 'value' && sort.up
+          }"
+          (click)="setSort('value')"
+        >
+          Valor
+        </div>
       </div>
       <div class="col col-3">
         <div class="text">Ações</div>

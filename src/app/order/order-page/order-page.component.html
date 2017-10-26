@@ -5,6 +5,7 @@
     <app-order-add (addOrder)="addOrder($event)"></app-order-add>
     <app-order-table [orders]="orders"
       (removeOrder)="removeOrder($event)"
+      (sortOrders)="sortOrders($event)"
     ></app-order-table>
   </div>
 </main>

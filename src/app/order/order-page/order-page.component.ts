@@ -51,7 +51,7 @@ export class OrderPageComponent implements OnInit {
   }
 
   removeOrder(orderId: string) {
-    this.open(this.content)
+    this.openModal(this.content)
       .then(
         (result) => {
           this.closeResult = `Closed with: ${result}`;
@@ -66,7 +66,23 @@ export class OrderPageComponent implements OnInit {
       );
   }
 
-  open(content) {
+  sortOrders(sort: any) {
+    const array = this.orders.sort((a, b) => {
+      if (a[sort.by] < b[sort.by]) {
+        return 1;
+      }
+
+      return -1;
+    });
+
+    if (sort.up) {
+      array.reverse();
+    }
+
+    this.orders = [ ...array ];
+  }
+
+  openModal(content) {
     return this.modalService.open(content).result;
   }
 

@@ -14,8 +14,14 @@ export class OrderTableComponent implements OnChanges, OnInit {
 
   @Output()
   removeOrder = new EventEmitter();
+  @Output()
+  sortOrders = new EventEmitter();
 
   total: number;
+  sort = {
+    by: 'createdAt',
+    up: false
+  };
 
   constructor() { }
 
@@ -36,6 +42,16 @@ export class OrderTableComponent implements OnChanges, OnInit {
 
   getOrderType(orderType: string) {
     return orderType === 'withdraw' ? 'Saque' : 'Depósito';
+  }
+
+  setSort(sort: string) {
+    if (this.sort.by === sort) {
+      this.sort.up = !this.sort.up;
+    } else {
+      this.sort.by = sort;
+      this.sort.up = false;
+    }
+    this.sortOrders.emit(this.sort);
   }
 
   private getTotal(orders: Array<Order>) {
