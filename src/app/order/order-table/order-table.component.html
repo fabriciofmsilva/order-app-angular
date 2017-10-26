@@ -44,7 +44,10 @@
     </div>
   </div>
   <div class="body">
-    <div class="row"
+    <div class="row border-left"
+      [ngClass]="{
+        'danger': order.type === 'withdraw'
+      }"
       *ngFor="let order of orders; trackBy: trackOrder;"
     >
       <div class="col col-12 col-sm-3">
@@ -63,12 +66,14 @@
         </div>
       </div>
       <div class="col col-12 col-sm-3">
-        <b class="sm-show padding">Ações: </b>
-        <button class="btn btn-link"
-          (click)="onOrderRemove(order.id)"
-        >
-          remover
-        </button>
+        <div class="text">
+          <b class="sm-show">Ações: </b>
+          <button class="btn btn-link"
+            (click)="onOrderRemove(order.id)"
+          >
+            remover
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -78,7 +83,12 @@
         <div class="text">Total em conta:</div>
       </div>
       <div class="col-6">
-        <div class="text">{{ total | currency:'BRL':true }}</div>
+        <div class="text text-success"
+          [ngClass]="{
+            'text-danger': total < 0
+          }">
+          {{ total | currency:'BRL':true }}
+        </div>
       </div>
     </div>
   </div>

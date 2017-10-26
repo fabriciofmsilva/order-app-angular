@@ -31,6 +31,7 @@ export class OrderAddComponent implements OnInit {
 
   onOrderFormSubmit(order: Order) {
     const orderToSend = { ...order, createdAt: moment().valueOf() };
+    orderToSend.value = order.type === 'withdraw' ? '-' + orderToSend.value : orderToSend.value;
     this.addOrder.emit(orderToSend);
     this.orderForm = this.initOrderForm();
   }

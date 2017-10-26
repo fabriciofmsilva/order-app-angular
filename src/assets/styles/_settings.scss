@@ -1,3 +1,6 @@
+$success: #28a745;
+$danger: #dc3545;
+
 @mixin position-full() {
   position: absolute;
   top: 0;
@@ -5,3 +8,4 @@
   bottom: 0;
   left: 0;
 }
+

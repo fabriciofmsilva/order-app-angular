@@ -31,7 +31,7 @@ export class OrderPageComponent implements OnInit {
       },
       {
         id: '1',
-        value: '12',
+        value: '-12',
         type: 'withdraw',
         createdAt: moment().subtract(2, 'days').valueOf()
       }

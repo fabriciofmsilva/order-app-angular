@@ -40,7 +40,8 @@ export class OrderTableComponent implements OnChanges, OnInit {
 
   private getTotal(orders: Array<Order>) {
     return orders.reduce((total, order) => {
-      return order.type === 'deposit' ? total + parseFloat(order.value) : total - parseFloat(order.value);
+      // return order.type === 'deposit' ? total + parseFloat(order.value) : total - parseFloat(order.value);
+      return total + parseFloat(order.value);
     }, 0);
   }
 

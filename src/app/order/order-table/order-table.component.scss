@@ -13,6 +13,9 @@
   flex-direction: column;
 
   .text {
+    display: flex;
+    align-items: center;
+    height: 100%;
     padding: .3rem;
   }
 
@@ -40,13 +43,41 @@
     }
 
     .col {
-      line-height: 2.2;
       border-top: 1px solid #e9ecef;
     }
   }
 
   .foot {
     font-weight: 600;
+  }
+}
+
+.border-left {
+  .col {
+    &:first-of-type {
+      .text {
+        border-left: 3px solid $success;
+      }
+    }
+  }
+
+  .text {
+    border-left: 3px solid $success;
+
+    @media (min-width: 576px) {
+      border-left: none;
+    }
+
+    @media (min-width: 576px) and (orientation: landscape) {
+      border-left: none;
+    }
+  }
+
+
+  &.danger {
+    .text {
+      border-left-color: $danger !important;
+    }
   }
 }
 
