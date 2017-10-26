@@ -2,7 +2,7 @@
   <div class="container">
     <h1>Transações</h1>
 
-    <app-order-add></app-order-add>
+    <app-order-add (addOrder)="addOrder($event)"></app-order-add>
     <app-order-table></app-order-table>
   </div>
 </main>

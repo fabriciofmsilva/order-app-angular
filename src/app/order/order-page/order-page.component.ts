@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { OrderModel } from '@app/core';
+
 @Component({
   selector: 'app-order-page',
   templateUrl: './order-page.component.html',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderPageComponent implements OnInit {
 
+  orders: Array<OrderModel>;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  addOrder(order: OrderModel) {
+    console.log(order);
   }
 
 }
