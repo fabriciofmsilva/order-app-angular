@@ -34,7 +34,7 @@ export class OrderPageComponent implements OnInit {
   }
 
   addOrder(order: Order) {
-    this.orders.push(order);
+    this.orders = [ ...this.orders, order ];
   }
 
   removeOrder(orderId: string) {
