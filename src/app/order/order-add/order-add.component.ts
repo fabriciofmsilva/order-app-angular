@@ -2,7 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import {
-  OrderModel,
+  Order,
   UuidService
 } from '@app/core';
 
@@ -27,7 +27,7 @@ export class OrderAddComponent implements OnInit {
     this.orderForm = this.initOrderForm();
   }
 
-  onOrderFormSubmit(order: OrderModel) {
+  onOrderFormSubmit(order: Order) {
     this.addOrder.emit(order);
   }
 

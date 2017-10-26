@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { OrderModel } from '@app/core';
+import { Order } from '@app/core';
 
 @Component({
   selector: 'app-order-page',
@@ -9,15 +9,38 @@ import { OrderModel } from '@app/core';
 })
 export class OrderPageComponent implements OnInit {
 
-  orders: Array<OrderModel>;
+  orders: Array<Order> = [];
 
   constructor() { }
 
   ngOnInit() {
+    this.orders.push(
+      {
+        id: '1',
+        value: '12',
+        type: 'withdraw'
+      },
+      {
+        id: '2',
+        value: '15',
+        type: 'deposit'
+      },
+      {
+        id: '3',
+        value: '20',
+        type: 'deposit'
+      }
+    );
   }
 
-  addOrder(order: OrderModel) {
-    console.log(order);
+  addOrder(order: Order) {
+    this.orders.push(order);
+  }
+
+  removeOrder(orderId: string) {
+    this.orders = this.orders.filter((order) => {
+      return order.id !== orderId;
+    });
   }
 
 }

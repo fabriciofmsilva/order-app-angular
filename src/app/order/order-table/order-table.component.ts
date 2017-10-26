@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
+import { Order } from '@app/core';
 
 @Component({
   selector: 'app-order-table',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderTableComponent implements OnInit {
 
+  @Input()
+  orders: Array<Order>;
+
+  @Output()
+  removeOrder = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onOrderRemove(orderId: string) {
+    this.removeOrder.emit(orderId);
   }
 
 }

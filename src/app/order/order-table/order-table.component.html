@@ -6,30 +6,19 @@
       <th scope="col">Ações</th>
     </tr>
   </thead>
+  <tfoot>
+    <td>Total em conta:</td>
+    <td>100</td>
+    <td></td>
+  </tfoot>
   <tbody>
-    <tr>
-      <td>Depósito</td>
-      <td>100</td>
+    <tr *ngFor="let order of orders;">
+      <td>{{ order.type }}</td>
+      <td>{{ order.value }}</td>
       <td>
-        <button class="btn btn-link">
-          remover
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td>Saque</td>
-      <td>100</td>
-      <td>
-        <button class="btn btn-link">
-          remover
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td>Depósito</td>
-      <td>100</td>
-      <td>
-        <button class="btn btn-link">
+        <button class="btn btn-link"
+          (click)="onOrderRemove(order.id)"
+        >
           remover
         </button>
       </td>

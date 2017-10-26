@@ -3,6 +3,8 @@
     <h1>Transações</h1>
 
     <app-order-add (addOrder)="addOrder($event)"></app-order-add>
-    <app-order-table></app-order-table>
+    <app-order-table [orders]="orders"
+      (removeOrder)="removeOrder($event)"
+    ></app-order-table>
   </div>
 </main>

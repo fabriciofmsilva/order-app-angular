@@ -1,4 +1,4 @@
-export class OrderModel {
+export class Order {
   id: string;
   value: string;
   type: string;
