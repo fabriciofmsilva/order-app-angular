@@ -68,11 +68,12 @@ Foi criado um *pipeline*, todo *commi* neste repositório na *master* é escutad
 * [Boostrap](https://getbootstrap.com/) - Biblioteca de componentes
 * [ng-bootstrap](https://ng-bootstrap.github.io/) - Biblioteca que converte os componentes do Bootstrap para o Angular
 * [moment](https://momentjs.com/) - Biblioteca para trabalhar com datas/horas
+* [express](http://expressjs.com/) - Framework usado para servir o front-end no servidor
 
 
 ## Licença
 
-Este projeto está licenciado sob a licença MIT - veja o [LICENSE.md](LICENSE.md) arquivo para detalhes
+Este projeto está licenciado sob a licença MIT - veja o arquivo para detalhes: [LICENSE.md](LICENSE.md).
 
 
 ## TODOs
