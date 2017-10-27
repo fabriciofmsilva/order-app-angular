@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/fabriciofmsilva/order-app-angular.svg?branch=master)](https://travis-ci.org/fabriciofmsilva/order-app-angular)
+
 # OrderAppAngular
 
 Este projeto é um protótipo de transações bancárias feito com Angular 4 e Boostrap 4.
