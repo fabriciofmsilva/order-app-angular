@@ -8,10 +8,12 @@ import { OrderModule } from '@app/order';
 
 import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
+import { PageNotFoundComponent } from './page-not-found.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
