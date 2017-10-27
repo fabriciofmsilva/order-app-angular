@@ -25,8 +25,7 @@ export class OrderTableComponent implements OnChanges, OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   ngOnChanges(changes: SimpleChanges) {
     this.total = this.getTotal(changes.orders.currentValue);
@@ -54,9 +53,8 @@ export class OrderTableComponent implements OnChanges, OnInit {
     this.sortOrders.emit(this.sort);
   }
 
-  private getTotal(orders: Array<Order>) {
+  getTotal(orders: Array<Order>) {
     return orders.reduce((total, order) => {
-      // return order.type === 'deposit' ? total + parseFloat(order.value) : total - parseFloat(order.value);
       return total + parseFloat(order.value);
     }, 0);
   }
