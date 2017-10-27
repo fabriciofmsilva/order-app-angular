@@ -44,7 +44,7 @@ npm install
 ## Executando o projeto
 
 ```
-npm dev-server
+npm run dev-server
 ```
 
 
