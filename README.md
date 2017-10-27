@@ -23,9 +23,15 @@ NodeJS -> v8.x.x
 npm -> v5.x.x
 ```
 
+No seu terminal preferido instale a cli do Angular:
+
+```
+npm install -g @angular/cli
+```
+
 ### Instalando
 
-Vamos começar clonando o projeto, no seu terminal preferido:
+Vamos começar clonando o projeto:
 
 ```
 git clone git@github.com:fabriciofmsilva/order-app-angular.git
@@ -44,7 +50,7 @@ npm install
 ## Executando o projeto
 
 ```
-npm run dev-server
+ng run server
 ```
 
 
