@@ -1,27 +1,84 @@
 # OrderAppAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.9.
+Este projeto é um protótipo de transações bancárias feito com Angular 4 e Boostrap 4.
 
-## Development server
+Atualmente todos os dados são salvos em memória. Não tem nenhuma persistência.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### [Demo](https://order-app-angular.herokuapp.com/)
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Começando
 
-## Build
+Siga as instruções abaixo para excutar o projeto na sua máquina local.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Estas instruções irão levá-lo a uma cópia do projeto em funcionamento em sua máquina local para fins de desenvolvimento e teste. Consulte a implantação de notas sobre como implantar o projeto em um sistema ao vivo.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Pré-requisitos
 
-## Running end-to-end tests
+Antes de começar o projeto você vai precisar do NodeJS e npm instalados na sua máquina.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```
+NodeJS -> v8.x.x
+npm -> v5.x.x
+```
 
-## Further help
+### Instalando
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Vamos começar clonando o projeto, no seu terminal preferido:
+
+```
+git clone git@github.com:fabriciofmsilva/order-app-angular.git
+cd order-app-angular
+```
+
+  Se você quiser pode fazer um *fork* do projeto.
+
+Continuando vamos instalar as dependências do projeto:
+
+```
+npm install
+```
+
+
+## Executando o projeto
+
+```
+npm dev-server
+```
+
+
+## Executando os testes
+
+Depois de instalado o projeto você pode executar os testes unitários e de integração:
+
+```
+npm run test
+```
+
+
+## Distribuição
+
+Foi criado um *pipeline*, todo *commi* neste repositório na *master* é escutado pelo Travis.ci que executa os testes. Caso nenhum teste falhe envia para o Heroku.
+
+
+## Frameworks e bibliotecas utilizadas
+
+* [Angular](https://angular.io/) - Framework JavaScript
+* [Boostrap](https://getbootstrap.com/) - Biblioteca de componentes
+* [ng-bootstrap](https://ng-bootstrap.github.io/) - Biblioteca que converte os componentes do Bootstrap para o Angular
+* [moment](https://momentjs.com/) - Biblioteca para trabalhar com datas/horas
+
+
+## Licença
+
+Este projeto está licenciado sob a licença MIT - veja o [LICENSE.md](LICENSE.md) arquivo para detalhes
+
+
+## TODOs
+
+- [] Finalizar os testes unitários e de integração
+- [] Criar os testes *end-to-end*
+- [] Criar uma api para a persistência de dados, ou salvar local
+- [] Trocar o `.` por `,` no campo de valor
+- [] Não permitir digitar a letra `E` no campo de valor
